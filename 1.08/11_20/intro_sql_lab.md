@@ -145,14 +145,35 @@ COUNT(*) AS user_count
 FROM users
 GROUP BY join_month
 ORDER BY user_count DESC
-limit 1;```
+limit 1;
+```
+
 4. Find the average length of a post caption. Then find the top 5 longest. Hint: you may need to find what the `LENGTH` function for PostGreSQL is
 
 ![Alt text](images\q4a.png)
 
 ![Alt text](images\q4b.png)
 
+```sql
+SELECT AVG(LENGTH(caption)) as avg
+FROM posts
+
+SELECT LENGTH(caption) as cap_length
+FROM posts
+WHERE caption IS NOT NULL
+ORDER BY cap_length DESC
+LIMIT 5;
+
+```
 
 5. Find the users who have more than 8 posts. No hints on this one! Might be a bit of a challenge.
 
 ![Alt text](images\q5.png)
+
+```sql
+SELECT user_id, COUNT(id) AS posts
+FROM posts
+GROUP BY user_id
+HAVING COUNT(id) > 8;
+
+```
