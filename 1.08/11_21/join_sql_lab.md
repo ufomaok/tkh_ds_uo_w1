@@ -17,11 +17,24 @@ Please get all post ids, their captions, and the hashtags related to the post. E
 
 ![Alt text](images\q1.png)
 
+```sql
+SELECT hashtags.id, hashtags.title, posts.id, posts.caption
+FROM posts
+LEFT JOIN hashtags_posts ON posts.id = hashtags_posts.post_id
+INNER JOIN hashtags ON hashtags.id = hashtags_posts.hashtag_id
+```
 ### 3. Subquery Practice
 
 Using subqueries, try to filter out comments that are shorter than the average lenght. In other words, we want only comments which are longer than average.
 
 ![Alt text](images\q2.png)
+
+```sql
+SELECT contents
+FROM comments
+WHERE LENGTH(contents) > (SELECT AVG(LENGTH(contents))
+						  FROM comments)
+```
 
 ### 4. CTE Practice
 
