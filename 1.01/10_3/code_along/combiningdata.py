@@ -13,12 +13,14 @@ off = False
 foobar = True
 
 # which data type is this?
-y = input("type something here.")
+# 'cool'is a string
+y = input('cool')
 
 # does this work? why or why not?
 print(word + y)
 
 # how about this?
+#cannot add string and integer
 print(num1 + word)
 
 # what can we do to make this work?

@@ -41,3 +41,19 @@ WHERE LENGTH(contents) > (SELECT AVG(LENGTH(contents))
 Using a window function, count the number of comments a post then join that to the user and posts table to show both the username and caption of the post.
 
 ![Alt text](images\q3.png)
+
+```sql
+SELECT
+    users.id,
+    users.username,
+    posts.caption,
+    COUNT(comments.id) OVER (PARTITION BY posts.id) AS comment_count
+FROM
+    posts
+
+LEFT JOIN
+    users ON posts.user_id = users.id
+	
+LEFT JOIN
+    comments ON posts.id = comments.post_id
+	```
