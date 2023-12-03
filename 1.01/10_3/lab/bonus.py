@@ -5,4 +5,7 @@
 # consider: what happens if the `input()` function takes in a
 # non-numeric answer. How will you handle erroneous values?
 
-...
+fahren = float(input("Enter Farenheit temp:"))
+cels = (fahren - 32)/1.8
+print(str(fahren)+ " Fahrenheit input is equivalent to\
+ " + str(cels) + " degrees Celsius.")

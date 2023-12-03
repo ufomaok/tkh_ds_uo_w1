@@ -26,7 +26,27 @@ print(miles)
 # speed in miles per hour?
 
 
-#Scratch Coding - 10/4/2023
+
+race_min = 42
+race_sec = 42
+kilo_distance = 10
+
+miles_distance = kilo_distance * 0.621371
+total_time_min = race_min + race_sec / 60
+
+#pace per the mile
+avg_miles_min = total_time_min / miles_distance
+
+#min and sec conversion
+avg_min = int(avg_miles_min)
+avg_sec = int((avg_miles_min - avg_min) * 60)
+
+#mph calculation
+avg_speed = miles_distance / (total_time_min / 60)
+
+
+
+
 
 
 
