@@ -74,4 +74,4 @@ Follow the same workflow to activate the `tdsp` environment specified in the `td
 
 ## Submission
 
-This exercise will **not** be submitted for grading. 
+This exercise will **not** be submitted for grading.
